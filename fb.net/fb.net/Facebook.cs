@@ -28,39 +28,41 @@ namespace fb.net
 
 		public FacebookUser GetUser()
 		{
-			//FacebookUser test = ApiCall<FacebookUser>("me", Method.GET);
-
-			var request = new RestRequest("me", Method.GET);
-			request.OnBeforeDeserialization = resp => { resp.ContentType = "application/json"; };
-			request.AddParameter("access_token", token);
-			IRestResponse<FacebookUser> fbUser = restClient.Execute<FacebookUser>(request);
-
-			FacebookUser me = JsonConvert.DeserializeObject<FacebookUser>(fbUser.Content);
-
-			return fbUser.Data;
+			FacebookUser me = ApiCall<FacebookUser>("me", Method.GET);
+			return me;
 		}
 
-		/*
-		public T ApiCall<T>(String method, Method type)
+
+		public T ApiCall<T>(String method, Method httpType)
 		{
-			return ApiCall<T>(method, type, null);
+			return ApiCall<T>(method, httpType, null);
 		}
 
-		public T ApiCall<T>(String method, Method type, KeyValuePair<string, string>[] args)
+		public T ApiCall<T>(String method, Method httpType, KeyValuePair<string, string>[] args)
+        {
+            return (T)ApiCall(typeof(T), method, httpType, args);
+        }
+
+		public object ApiCall(Type type, String method, Method httpType, KeyValuePair<string, string>[] args)
 		{
-			var request = new RestRequest(method, type);
+			var request = new RestRequest(method, httpType);
 			request.AddParameter("access_token", token);
 
-			foreach (KeyValuePair<string, string> arg in args)
+			if (args != null)
 			{
-				request.AddParameter(arg.Key, arg.Value);
+				foreach (KeyValuePair<string, string> arg in args)
+				{
+					request.AddParameter(arg.Key, arg.Value);
+				}
 			}
 
-			IRestResponse<T> response = restClient.Execute<T>(request);
+			IRestResponse response = restClient.Execute(request);
 
-			return response.Data;
+			object obj = JsonConvert.DeserializeObject(response.Content, type);
+
+			return obj;
 		}
-		*/
+
 
 	}
 }
