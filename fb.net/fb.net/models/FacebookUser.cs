@@ -19,11 +19,11 @@ namespace fb.net
 		public string UserName { get; set; }
 		public string Email { get; set; }
 
-		public FacebookError Error { get; set; }
+		//public FacebookError Error { get; set; }
 
-		public FacebookNamedItem Location;
-		public List<FacebookWork> Work;
-		public List<FacebookEducation> Education;
+		public FacebookNamedItem Location { get; set; }
+		public List<FacebookWork> Work { get; set; }
+		public List<FacebookEducation> Education { get; set; }
 
 		public GenderTypes Gender { get; set; } 
 		public double TimeZone { get; set; }

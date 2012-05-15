@@ -2,6 +2,8 @@ using System;
 using RestSharp;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using RestSharp.Deserializers;
+using System.Collections.Generic;
 
 
 namespace fb.net
@@ -26,7 +28,10 @@ namespace fb.net
 
 		public FacebookUser GetUser()
 		{
+			//FacebookUser test = ApiCall<FacebookUser>("me", Method.GET);
+
 			var request = new RestRequest("me", Method.GET);
+			request.OnBeforeDeserialization = resp => { resp.ContentType = "application/json"; };
 			request.AddParameter("access_token", token);
 			IRestResponse<FacebookUser> fbUser = restClient.Execute<FacebookUser>(request);
 
@@ -34,6 +39,28 @@ namespace fb.net
 
 			return fbUser.Data;
 		}
+
+		/*
+		public T ApiCall<T>(String method, Method type)
+		{
+			return ApiCall<T>(method, type, null);
+		}
+
+		public T ApiCall<T>(String method, Method type, KeyValuePair<string, string>[] args)
+		{
+			var request = new RestRequest(method, type);
+			request.AddParameter("access_token", token);
+
+			foreach (KeyValuePair<string, string> arg in args)
+			{
+				request.AddParameter(arg.Key, arg.Value);
+			}
+
+			IRestResponse<T> response = restClient.Execute<T>(request);
+
+			return response.Data;
+		}
+		*/
 
 	}
 }

@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fb.net", "fb.net\fb.net.csproj", "{61220282-8C7F-4386-992C-8715E7E0511A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dependencies", "dependencies", "{2E18B09A-D2D5-431E-A416-5EB0E3907A52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestSharp.Net4", "..\dependencies\RestSharp\RestSharp.Net4\RestSharp.Net4.csproj", "{5FF943A5-260F-4042-B4CE-C4977BAD4EBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newtonsoft.Json", "..\dependencies\Newtonsoft.Json\Src\Newtonsoft.Json\Newtonsoft.Json.csproj", "{A9AE40FF-1A21-414A-9FE7-3BE13644CC6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FF943A5-260F-4042-B4CE-C4977BAD4EBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FF943A5-260F-4042-B4CE-C4977BAD4EBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FF943A5-260F-4042-B4CE-C4977BAD4EBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FF943A5-260F-4042-B4CE-C4977BAD4EBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61220282-8C7F-4386-992C-8715E7E0511A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61220282-8C7F-4386-992C-8715E7E0511A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61220282-8C7F-4386-992C-8715E7E0511A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61220282-8C7F-4386-992C-8715E7E0511A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9AE40FF-1A21-414A-9FE7-3BE13644CC6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9AE40FF-1A21-414A-9FE7-3BE13644CC6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9AE40FF-1A21-414A-9FE7-3BE13644CC6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9AE40FF-1A21-414A-9FE7-3BE13644CC6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5FF943A5-260F-4042-B4CE-C4977BAD4EBB} = {2E18B09A-D2D5-431E-A416-5EB0E3907A52}
+		{A9AE40FF-1A21-414A-9FE7-3BE13644CC6D} = {2E18B09A-D2D5-431E-A416-5EB0E3907A52}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = fb.net\fb.net.csproj
+	EndGlobalSection
+EndGlobal

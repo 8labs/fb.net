@@ -9,7 +9,7 @@ namespace fb.net
 
 		FacebookNamedItem School { get; set; }
 		FacebookNamedItem Year { get; set; }
-		string Type;
+		string Type { get; set; }
 	}
 }
 
