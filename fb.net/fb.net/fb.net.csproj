@@ -30,6 +30,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\dependencies\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\..\dependencies\RestSharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
@@ -43,15 +49,5 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="models\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\dependencies\RestSharp\RestSharp.Net4\RestSharp.Net4.csproj">
-      <Project>{5FF943A5-260F-4042-B4CE-C4977BAD4EBB}</Project>
-      <Name>RestSharp.Net4</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\dependencies\Newtonsoft.Json\Src\Newtonsoft.Json\Newtonsoft.Json.csproj">
-      <Project>{A9AE40FF-1A21-414A-9FE7-3BE13644CC6D}</Project>
-      <Name>Newtonsoft.Json</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>

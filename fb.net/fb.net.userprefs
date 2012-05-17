@@ -7,9 +7,7 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="dependencies" expanded="True">
-            <Node name="Newtonsoft.Json" selected="True" />
-          </Node>
+          <Node name="dependencies" expanded="True" />
           <Node name="fb.net" expanded="True">
             <Node name="References" expanded="True" />
           </Node>
