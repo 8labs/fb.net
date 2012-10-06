@@ -58,6 +58,11 @@ namespace fb.net
 
 			IRestResponse response = restClient.Execute(request);
 
+            if (response.ErrorException != null)
+            {
+                throw response.ErrorException;
+            }
+
 			object obj = JsonConvert.DeserializeObject(response.Content, type);
 
 			return obj;
